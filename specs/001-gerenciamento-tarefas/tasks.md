@@ -134,12 +134,12 @@ description: "Task list for the task management application"
 - [X] T035 [P] Document objective, architecture, technologies, local setup, Docker usage, SQLite volume persistence, CI/CD, SonarQube Cloud, GitHub Actions Secrets, and AWS EC2 deployment in `README.md`
 - [X] T036 Run the complete Pytest suite and quickstart validation scenarios, then record any required corrections in `tests/test_tasks_api.py`, `tests/test_tasks_ui.py`, or `README.md`
 - [X] T037 Run a final security and repository hygiene review to confirm no credentials, tokens, SSH keys, or sensitive deployment values are committed, using `.github/workflows/pipeline.yml` and `README.md` as the operational references
-- [ ] T038 Provision and configure a suitable AWS EC2 Linux instance, including the application host settings and a Security Group that permits SSH administration and public HTTP access required by the application, documenting the procedure in `README.md`
-- [ ] T039 Prepare the EC2 instance to run the project with Docker and Docker Compose, including the required runtime directories and permissions, documenting the commands in `README.md`
-- [ ] T040 Configure the GitHub Actions repository secrets for the EC2 host, SSH username, and private SSH key, and document the required secret names and usage without storing their values in `README.md` or any repository file
-- [ ] T041 Implement the automatic EC2 deployment job in `.github/workflows/pipeline.yml`, executing only after tests, SonarQube Cloud analysis, and Docker image build complete successfully, and connecting with the configured SSH secrets
-- [ ] T042 Configure the EC2 deployment commands to recreate or update the application without removing the Docker named volume `task_data`, preserving the SQLite database across new versions through `docker-compose.yml`, `.github/workflows/pipeline.yml`, and `README.md`
-- [ ] T043 Validate the production deployment from an external browser or HTTP request and document the public EC2 address and successful application reachability in `README.md`
+- [X] T038 Provision and configure a suitable AWS EC2 Linux instance, including the application host settings and a Security Group that permits SSH administration and public HTTP access required by the application, documenting the procedure in `README.md`
+- [X] T039 Prepare the EC2 instance to run the project with Docker and Docker Compose, including the required runtime directories and permissions, documenting the commands in `README.md`
+- [X] T040 Configure the GitHub Actions repository secrets for the EC2 host, SSH username, and private SSH key, and document the required secret names and usage without storing their values in `README.md` or any repository file
+- [X] T041 Implement the automatic EC2 deployment job in `.github/workflows/pipeline.yml`, executing only after tests, SonarQube Cloud analysis, and Docker image build complete successfully, and connecting with the configured SSH secrets
+- [X] T042 Configure the EC2 deployment commands to recreate or update the application without removing the Docker named volume `task_data`, preserving the SQLite database across new versions through `docker-compose.yml`, `.github/workflows/pipeline.yml`, and `README.md`
+- [X] T043 Validate the production deployment from an external browser or HTTP request and document the public EC2 address and successful application reachability in `README.md`
 
 ---
 

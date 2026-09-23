@@ -1,0 +1,16 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: task-manager-app
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=sqlite:////app/data/tasks.db
+    volumes:
+      - task_data:/app/data
+    restart: unless-stopped
+
+volumes:
+  task_data:

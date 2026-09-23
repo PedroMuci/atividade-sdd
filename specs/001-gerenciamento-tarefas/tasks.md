@@ -17,10 +17,10 @@ description: "Task list for the task management application"
 
 **Purpose**: Initialize the Python web application and the local/container execution files.
 
-- [ ] T001 [P] Create the Python dependency manifest with Python 3.11-compatible FastAPI, Jinja2, SQLAlchemy, Pytest, HTTPX, and Uvicorn dependencies in `requirements.txt`
-- [ ] T002 [P] Create the application container image with Python 3.11, dependency installation, `/app/data` setup, and Uvicorn startup in `Dockerfile`
-- [ ] T003 [P] Configure the local and production-equivalent service, `DATABASE_URL=sqlite:////app/data/tasks.db`, and named volume `task_data:/app/data` in `docker-compose.yml`
-- [ ] T004 [P] Create the planned package, route, service, validator, template, static, and test directories with package markers in `app/__init__.py` and `app/routes/__init__.py`
+- [X] T001 [P] Create the Python dependency manifest with Python 3.11-compatible FastAPI, Jinja2, SQLAlchemy, Pytest, HTTPX, and Uvicorn dependencies in `requirements.txt`
+- [X] T002 [P] Create the application container image with Python 3.11, dependency installation, `/app/data` setup, and Uvicorn startup in `Dockerfile`
+- [X] T003 [P] Configure the local and production-equivalent service, `DATABASE_URL=sqlite:////app/data/tasks.db`, and named volume `task_data:/app/data` in `docker-compose.yml`
+- [X] T004 [P] Create the planned package, route, service, validator, template, static, and test directories with package markers in `app/__init__.py` and `app/routes/__init__.py`
 
 ---
 
@@ -30,13 +30,13 @@ description: "Task list for the task management application"
 
 **Checkpoint**: The application foundation can create a database session, validate Task data, and expose a testable FastAPI application before story-specific work begins.
 
-- [ ] T005 [P] Implement environment-based SQLite engine, session factory, and table initialization with the default database path in `app/database.py`
-- [ ] T006 [P] Implement the SQLAlchemy Task entity with `id` as an auto-generated primary key, required trimmed non-empty `title`, optional `description`, status enum values `Pendente`, `Em andamento`, and `Concluída`, defaulting to `Pendente` when omitted, and generated `created_at` and `updated_at` fields in `app/models.py`
-- [ ] T007 [P] Implement request and response schemas for Task creation, update, and serialization, including optional description, the three allowed status values, and `Pendente` as the default when status is omitted, in `app/schemas.py`
-- [ ] T008 [P] Implement shared validation rules in `app/validators/task_validators.py`: title must be present and non-blank after trimming, title maximum 200 characters, description maximum 2000 characters, and malformed or invalid status values must be rejected before persistence
-- [ ] T009 Implement service-layer error types and consistent handling for validation, not-found, and persistence failures in `app/services/task_service.py`
-- [ ] T010 Implement the FastAPI application factory, database initialization, template/static mounting, and shared error responses without authentication in `app/main.py`
-- [ ] T011 [P] Create isolated test database fixtures, FastAPI test client setup, and database cleanup behavior in `tests/conftest.py`
+- [X] T005 [P] Implement environment-based SQLite engine, session factory, and table initialization with the default database path in `app/database.py`
+- [X] T006 [P] Implement the SQLAlchemy Task entity with `id` as an auto-generated primary key, required trimmed non-empty `title`, optional `description`, status enum values `Pendente`, `Em andamento`, and `Concluída`, defaulting to `Pendente` when omitted, and generated `created_at` and `updated_at` fields in `app/models.py`
+- [X] T007 [P] Implement request and response schemas for Task creation, update, and serialization, including optional description, the three allowed status values, and `Pendente` as the default when status is omitted, in `app/schemas.py`
+- [X] T008 [P] Implement shared validation rules in `app/validators/task_validators.py`: title must be present and non-blank after trimming, title maximum 200 characters, description maximum 2000 characters, and malformed or invalid status values must be rejected before persistence
+- [X] T009 Implement service-layer error types and consistent handling for validation, not-found, and persistence failures in `app/services/task_service.py`
+- [X] T010 Implement the FastAPI application factory, database initialization, template/static mounting, and shared error responses without authentication in `app/main.py`
+- [X] T011 [P] Create isolated test database fixtures, FastAPI test client setup, and database cleanup behavior in `tests/conftest.py`
 
 ---
 
@@ -48,14 +48,14 @@ description: "Task list for the task management application"
 
 ### Tests for User Story 1
 
-- [ ] T012 [P] [US1] Add API and browser integration tests for `GET /` covering the empty-state message and rendering of all task fields in `tests/test_tasks_api.py` and `tests/test_tasks_ui.py`
+- [X] T012 [P] [US1] Add API and browser integration tests for `GET /` covering the empty-state message and rendering of all task fields in `tests/test_tasks_api.py` and `tests/test_tasks_ui.py`
 
 ### Implementation for User Story 1
 
-- [ ] T013 [US1] Implement task listing and empty-state retrieval in `app/services/task_service.py`, returning all tasks grouped by current status without modifying records
-- [ ] T014 [US1] Implement `GET /` and `GET /tasks/{id}` according to `contracts/task-api.md`, including clear not-found feedback, in `app/routes/tasks.py`
-- [ ] T015 [US1] Create the shared page layout and task list/empty-state markup in `app/templates/base.html` and `app/templates/tasks.html`
-- [ ] T016 [P] [US1] Add responsive task list styling and status presentation in `app/static/css/styles.css`
+- [X] T013 [US1] Implement task listing and empty-state retrieval in `app/services/task_service.py`, returning all tasks grouped by current status without modifying records
+- [X] T014 [US1] Implement `GET /` and `GET /tasks/{id}` according to `contracts/task-api.md`, including clear not-found feedback, in `app/routes/tasks.py`
+- [X] T015 [US1] Create the shared page layout and task list/empty-state markup in `app/templates/base.html` and `app/templates/tasks.html`
+- [X] T016 [P] [US1] Add responsive task list styling and status presentation in `app/static/css/styles.css`
 
 **Checkpoint**: User Story 1 is independently usable and testable through the browser and `GET /`.
 
@@ -69,15 +69,15 @@ description: "Task list for the task management application"
 
 ### Tests for User Story 2
 
-- [ ] T017 [P] [US2] Add API contract tests for `POST /tasks` and `PUT /tasks/{id}` covering valid creation, editing, required trimmed title, optional description, status values, 200/2000-character limits, and invalid payload errors in `tests/test_tasks_api.py`
-- [ ] T018 [P] [US2] Add browser flow tests for the create and edit forms, success feedback, and validation error display in `tests/test_tasks_ui.py`
+- [X] T017 [P] [US2] Add API contract tests for `POST /tasks` and `PUT /tasks/{id}` covering valid creation, editing, required trimmed title, optional description, status values, 200/2000-character limits, and invalid payload errors in `tests/test_tasks_api.py`
+- [X] T018 [P] [US2] Add browser flow tests for the create and edit forms, success feedback, and validation error display in `tests/test_tasks_ui.py`
 
 ### Implementation for User Story 2
 
-- [ ] T019 [US2] Implement create and update service operations with atomic validation and timestamps in `app/services/task_service.py`
-- [ ] T020 [US2] Implement `POST /tasks` and `PUT /tasks/{id}` using the task schemas and shared validators, returning clear errors without silent failure, in `app/routes/tasks.py`
-- [ ] T021 [US2] Add create and edit forms with field-level error presentation to `app/templates/tasks.html`
-- [ ] T022 [P] [US2] Implement browser form submission, success feedback, and validation-error rendering in `app/static/js/app.js`
+- [X] T019 [US2] Implement create and update service operations with atomic validation and timestamps in `app/services/task_service.py`
+- [X] T020 [US2] Implement `POST /tasks` and `PUT /tasks/{id}` using the task schemas and shared validators, returning clear errors without silent failure, in `app/routes/tasks.py`
+- [X] T021 [US2] Add create and edit forms with field-level error presentation to `app/templates/tasks.html`
+- [X] T022 [P] [US2] Implement browser form submission, success feedback, and validation-error rendering in `app/static/js/app.js`
 
 **Checkpoint**: User Stories 1 and 2 are independently usable; users can list, create, edit, and validate tasks.
 
@@ -91,14 +91,14 @@ description: "Task list for the task management application"
 
 ### Tests for User Story 3
 
-- [ ] T023 [P] [US3] Add API tests for status changes through `PUT /tasks/{id}`, `DELETE /tasks/{id}`, invalid status values, and unknown identifiers in `tests/test_tasks_api.py`
-- [ ] T024 [P] [US3] Add browser flow tests for status controls, delete confirmation, removal from the list, and operation error feedback in `tests/test_tasks_ui.py`
+- [X] T023 [P] [US3] Add API tests for status changes through `PUT /tasks/{id}`, `DELETE /tasks/{id}`, invalid status values, and unknown identifiers in `tests/test_tasks_api.py`
+- [X] T024 [P] [US3] Add browser flow tests for status controls, delete confirmation, removal from the list, and operation error feedback in `tests/test_tasks_ui.py`
 
 ### Implementation for User Story 3
 
-- [ ] T025 [US3] Implement status transition and deletion operations with not-found handling and transaction rollback on persistence failure in `app/services/task_service.py`
-- [ ] T026 [US3] Complete status update and `DELETE /tasks/{id}` route behavior according to `contracts/task-api.md` in `app/routes/tasks.py`
-- [ ] T027 [US3] Add status controls, delete action, confirmation, and operation feedback to `app/templates/tasks.html` and `app/static/js/app.js`
+- [X] T025 [US3] Implement status transition and deletion operations with not-found handling and transaction rollback on persistence failure in `app/services/task_service.py`
+- [X] T026 [US3] Complete status update and `DELETE /tasks/{id}` route behavior according to `contracts/task-api.md` in `app/routes/tasks.py`
+- [X] T027 [US3] Add status controls, delete action, confirmation, and operation feedback to `app/templates/tasks.html` and `app/static/js/app.js`
 
 **Checkpoint**: User Stories 1, 2, and 3 are independently functional for the complete task lifecycle.
 
@@ -112,13 +112,13 @@ description: "Task list for the task management application"
 
 ### Tests for User Story 4
 
-- [ ] T028 [P] [US4] Add persistence integration tests that create tasks, recreate the application session against the same SQLite database, and verify records remain available in `tests/test_tasks_api.py`
-- [ ] T029 [P] [US4] Add browser smoke coverage for unauthenticated access, responsive task layout, and navigation from the root page in `tests/test_tasks_ui.py`
+- [X] T028 [P] [US4] Add persistence integration tests that create tasks, recreate the application session against the same SQLite database, and verify records remain available in `tests/test_tasks_api.py`
+- [X] T029 [P] [US4] Add browser smoke coverage for unauthenticated access, responsive task layout, and navigation from the root page in `tests/test_tasks_ui.py`
 
 ### Implementation for User Story 4
 
-- [ ] T030 [US4] Verify database initialization and session lifecycle preserve data across application restart while retaining rollback behavior in `app/database.py` and `app/services/task_service.py`
-- [ ] T031 [US4] Complete responsive layout, accessible form controls, and browser navigation behavior in `app/templates/base.html`, `app/templates/tasks.html`, and `app/static/css/styles.css`
+- [X] T030 [US4] Verify database initialization and session lifecycle preserve data across application restart while retaining rollback behavior in `app/database.py` and `app/services/task_service.py`
+- [X] T031 [US4] Complete responsive layout, accessible form controls, and browser navigation behavior in `app/templates/base.html`, `app/templates/tasks.html`, and `app/static/css/styles.css`
 - [ ] T032 [US4] Validate Docker Compose volume persistence and browser access at `http://localhost:8000` using `docker-compose.yml` and the documented quickstart flow
 
 **Checkpoint**: The complete academic task manager persists data and operates through a browser without authentication.
@@ -129,9 +129,9 @@ description: "Task list for the task management application"
 
 **Purpose**: Finish quality gates, documentation, deployment automation, and final validation.
 
-- [ ] T033 [P] Add repository-level test, security analysis, SonarQube Cloud, Docker build, and deploy-gate jobs triggered from `main` in `.github/workflows/pipeline.yml`
-- [ ] T034 [P] Configure SonarQube Cloud project metadata and source/test exclusions without embedding tokens or credentials in `sonar-project.properties`
-- [ ] T035 [P] Document objective, architecture, technologies, local setup, Docker usage, SQLite volume persistence, CI/CD, SonarQube Cloud, GitHub Actions Secrets, and AWS EC2 deployment in `README.md`
+- [X] T033 [P] Add repository-level test, security analysis, SonarQube Cloud, Docker build, and deploy-gate jobs triggered from `main` in `.github/workflows/pipeline.yml`
+- [X] T034 [P] Configure SonarQube Cloud project metadata and source/test exclusions without embedding tokens or credentials in `sonar-project.properties`
+- [X] T035 [P] Document objective, architecture, technologies, local setup, Docker usage, SQLite volume persistence, CI/CD, SonarQube Cloud, GitHub Actions Secrets, and AWS EC2 deployment in `README.md`
 - [ ] T036 Run the complete Pytest suite and quickstart validation scenarios, then record any required corrections in `tests/test_tasks_api.py`, `tests/test_tasks_ui.py`, or `README.md`
 - [ ] T037 Run a final security and repository hygiene review to confirm no credentials, tokens, SSH keys, or sensitive deployment values are committed, using `.github/workflows/pipeline.yml` and `README.md` as the operational references
 - [ ] T038 Provision and configure a suitable AWS EC2 Linux instance, including the application host settings and a Security Group that permits SSH administration and public HTTP access required by the application, documenting the procedure in `README.md`

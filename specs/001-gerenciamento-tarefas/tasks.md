@@ -119,7 +119,7 @@ description: "Task list for the task management application"
 
 - [X] T030 [US4] Verify database initialization and session lifecycle preserve data across application restart while retaining rollback behavior in `app/database.py` and `app/services/task_service.py`
 - [X] T031 [US4] Complete responsive layout, accessible form controls, and browser navigation behavior in `app/templates/base.html`, `app/templates/tasks.html`, and `app/static/css/styles.css`
-- [ ] T032 [US4] Validate Docker Compose volume persistence and browser access at `http://localhost:8000` using `docker-compose.yml` and the documented quickstart flow
+- [X] T032 [US4] Validate Docker Compose volume persistence and browser access at `http://localhost:8000` using `docker-compose.yml` and the documented quickstart flow
 
 **Checkpoint**: The complete academic task manager persists data and operates through a browser without authentication.
 
@@ -132,8 +132,8 @@ description: "Task list for the task management application"
 - [X] T033 [P] Add repository-level test, security analysis, SonarQube Cloud, Docker build, and deploy-gate jobs triggered from `main` in `.github/workflows/pipeline.yml`
 - [X] T034 [P] Configure SonarQube Cloud project metadata and source/test exclusions without embedding tokens or credentials in `sonar-project.properties`
 - [X] T035 [P] Document objective, architecture, technologies, local setup, Docker usage, SQLite volume persistence, CI/CD, SonarQube Cloud, GitHub Actions Secrets, and AWS EC2 deployment in `README.md`
-- [ ] T036 Run the complete Pytest suite and quickstart validation scenarios, then record any required corrections in `tests/test_tasks_api.py`, `tests/test_tasks_ui.py`, or `README.md`
-- [ ] T037 Run a final security and repository hygiene review to confirm no credentials, tokens, SSH keys, or sensitive deployment values are committed, using `.github/workflows/pipeline.yml` and `README.md` as the operational references
+- [X] T036 Run the complete Pytest suite and quickstart validation scenarios, then record any required corrections in `tests/test_tasks_api.py`, `tests/test_tasks_ui.py`, or `README.md`
+- [X] T037 Run a final security and repository hygiene review to confirm no credentials, tokens, SSH keys, or sensitive deployment values are committed, using `.github/workflows/pipeline.yml` and `README.md` as the operational references
 - [ ] T038 Provision and configure a suitable AWS EC2 Linux instance, including the application host settings and a Security Group that permits SSH administration and public HTTP access required by the application, documenting the procedure in `README.md`
 - [ ] T039 Prepare the EC2 instance to run the project with Docker and Docker Compose, including the required runtime directories and permissions, documenting the commands in `README.md`
 - [ ] T040 Configure the GitHub Actions repository secrets for the EC2 host, SSH username, and private SSH key, and document the required secret names and usage without storing their values in `README.md` or any repository file
